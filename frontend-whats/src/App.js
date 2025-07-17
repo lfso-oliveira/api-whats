@@ -21,13 +21,13 @@ function App() {
   }, []);
 
   const fetchStatus = async () => {
-    const res = await fetch('http://localhost:3001/status');
+    const res = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:3001'}/status`);
     const data = await res.json();
     setConectado(data.conectado);
   };
 
   const fetchQr = async () => {
-    const res = await fetch('http://localhost:3001/qr');
+    const res = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:3001'}/qr`);
     const data = await res.json();
     setQr(data.qr);
   };
@@ -41,7 +41,7 @@ function App() {
     formData.append('numeros', JSON.stringify(numeros.split(/\r?\n/).map(n => n.trim()).filter(n => n)));
     if (anexo) formData.append('anexo', anexo);
     try {
-      const res = await fetch('http://localhost:3001/enviar', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:3001'}/enviar`, {
         method: 'POST',
         body: formData
       });
