@@ -8,8 +8,13 @@ let isReady = false;
 function initWhatsApp() {
   client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: { headless: true }
+    puppeteer: { 
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']  // adiciona essas flags aqui
+    }
   });
+
+
 
   client.on('qr', (qr) => {
     qrCodeData = qr;
