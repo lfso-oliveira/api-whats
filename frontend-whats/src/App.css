@@ -1,0 +1,53 @@
+.App {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  font-family: Arial, sans-serif;
+}
+.form-whats {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-whats textarea {
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.form-whats input[type="file"] {
+  margin-top: 4px;
+}
+.form-whats button {
+  padding: 10px 0;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.form-whats button:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
+.resultado {
+  margin-top: 24px;
+  background: #f7f7f7;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  word-break: break-all;
+}
+img[alt="QR Code"] {
+  margin-top: 16px;
+  border: 2px solid #25d366;
+  border-radius: 8px;
+}
